@@ -1,0 +1,20 @@
+{
+  "name": "@tpw/typescript-configs",
+  "version": "1.0.0",
+  "license": "MIT",
+  "description": "A set of typescript configuration files that can be extended.",
+  "author": "Temple & Webster Ltd.",
+  "publishConfig": {
+    "access": "public",
+    "@tpw:registry": "https://registry.npmjs.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/templeandwebster/web-configs.git",
+    "directory": "packages/typescript-configs"
+  },
+  "bugs": {
+    "url": "https://github.com/templeandwebster/web-configs/issues"
+  },
+  "homepage": "https://github.com/templeandwebster/web-configs/blob/main/packages/typescript-configs/README.md"
+}
