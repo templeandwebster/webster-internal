@@ -1,6 +1,6 @@
 {
   "name": "@tpw/stylelint-config",
-  "version": "15.0.2",
+  "version": "1.0.0",
   "license": "MIT",
   "description": "A shared stylelint rules and config that can be extended.",
   "keywords": [
