@@ -1,12 +1,12 @@
-$font-stack: Monaco;
+$font-stack: Montserrat;
 $foo: bar;
-$foo-font: Monaco;
+$foo-font: Montserrat;
 
-$polaris-font-stack: Monaco;
+$webster-font-stack: Montserrat;
 
 .foo {
-  --font-stack: Monaco;
-  --foo-font: Monaco;
-  font: 20px Monaco;
-  font-family: Monaco;
+  --font-stack: Montserrat;
+  --foo-font: Montserrat;
+  font: 20px Montserrat;
+  font-family: Montserrat;
 }

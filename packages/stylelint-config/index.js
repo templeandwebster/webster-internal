@@ -321,7 +321,7 @@ module.exports = {
     'value-keyword-case': [
       'lower',
       {
-        ignoreProperties: ['/^--.*font/', '/^\\$.*font/', '/^\\$polaris/'],
+        ignoreProperties: ['/^--.*font/', '/^\\$.*font/', '/^\\$webster/'],
       },
     ],
     // Disallow vendor prefixes for values.

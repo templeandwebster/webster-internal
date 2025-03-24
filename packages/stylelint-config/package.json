@@ -1,29 +1,29 @@
 {
-  "name": "@shopify/stylelint-plugin",
+  "name": "@tpw/stylelint-config",
   "version": "15.0.2",
   "license": "MIT",
-  "description": "Shopify's stylelint rules and config",
+  "description": "A shared stylelint rules and config that can be extended.",
   "keywords": [
     "stylelint",
-    "stylelint-plugin",
+    "stylelint-config",
     "config",
-    "shopify",
+    "tpw",
     "css"
   ],
   "main": "index.js",
   "publishConfig": {
     "access": "public",
-    "@shopify:registry": "https://registry.npmjs.org"
+    "@tpw:registry": "https://registry.npmjs.org"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Shopify/web-configs.git",
-    "directory": "packages/stylelint-plugin"
+    "url": "git+https://github.com/templeandwebster/web-configs.git",
+    "directory": "packages/stylelint-config"
   },
   "bugs": {
-    "url": "https://github.com/Shopify/web-configs/issues"
+    "url": "https://github.com/templeandwebster/web-configs/issues"
   },
-  "homepage": "https://github.com/Shopify/web-configs/blob/main/packages/stylelint-plugin/README.md",
+  "homepage": "https://github.com/templeandwebster/web-configs/blob/main/packages/stylelint-config/README.md",
   "dependencies": {
     "postcss": "^8.4.39",
     "postcss-scss": "^4.0.9",
