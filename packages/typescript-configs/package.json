@@ -1,6 +1,6 @@
 {
   "name": "@tpw/typescript-configs",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "license": "MIT",
   "description": "A set of typescript configuration files that can be extended.",
   "author": "Temple & Webster Ltd.",
