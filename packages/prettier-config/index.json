@@ -1,0 +1,14 @@
+{
+  "arrowParens": "always",
+  "singleQuote": true,
+  "bracketSpacing": false,
+  "trailingComma": "all",
+  "overrides": [
+    {
+      "files": "**/*.md",
+      "options": {
+        "parser": "mdx"
+      }
+    }
+  ]
+}
