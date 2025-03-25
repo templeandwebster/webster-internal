@@ -13,9 +13,7 @@ This repo is managed as a monorepo that is composed of many npm packages, where 
 | Name                                                | NPM                                                                                                                                        | Size                                                                                                                                                                                             |
 | --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | [webster-prettier](packages/webster-prettier) | [![npm version](https://badge.fury.io/js/@tpw%2Fwebster-prettier.svg)](https://badge.fury.io/js/@tpw%2Fwebster-prettier) | [![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/@tpw/webster-prettier.svg)](https://img.shields.io/bundlephobia/minzip/@tpw/webser-prettier.svg) |
-
 | [webster-stylelint](packages/webster-stylelint) | [![npm version](https://badge.fury.io/js/@tpw%2Fwebster-stylelint.svg)](https://badge.fury.io/js/@tpw%2Fwebster-stylelint) | [![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/@tpw/webster-stylelint.svg)](https://img.shields.io/bundlephobia/minzip/@tpw/webser-stylelint.svg) |
-
 | [webster-typescript](packages/webster-typescript) | [![npm version](https://badge.fury.io/js/@tpw%2Fwebster-typescript.svg)](https://badge.fury.io/js/@tpw%2Fwebster-typescript) | [![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/@tpw/webster-typescript.svg)](https://img.shields.io/bundlephobia/minzip/@tpw/webser-typescript.svg) |
 
 ## Commands
