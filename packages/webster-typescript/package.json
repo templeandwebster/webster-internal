@@ -1,0 +1,27 @@
+{
+  "name": "@tpw/webster-typescript",
+  "version": "1.0.4",
+  "license": "MIT",
+  "description": "A typescript configuration for the Webster framework that can be extended.",
+  "author": "Temple & Webster Group Ltd",
+  "keywords": [
+    "typescript",
+    "webster-typescript",
+    "config",
+    "tpw",
+    "webster"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "@tpw:registry": "https://registry.npmjs.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/templeandwebster/webster-internal.git",
+    "directory": "packages/webster-typescript"
+  },
+  "bugs": {
+    "url": "https://github.com/templeandwebster/webster-internal/issues"
+  },
+  "homepage": "https://github.com/templeandwebster/webster-internal/blob/main/packages/webster-typescript/README.md"
+}

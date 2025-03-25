@@ -1,6 +1,8 @@
-# `@tpw/typescript-configs`
+# `@tpw/webster-typescript`
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](../../LICENSE.md) [![npm version](https://badge.fury.io/js/%40tpw%2Ftypescript-configs.svg)](https://badge.fury.io/js/%40tpw%2Ftypescript-configs.svg)
+Temple & Webster's typescript configuration for the Webster frontend framework.
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](../../LICENSE.md) [![npm version](https://badge.fury.io/js/%40tpw%2Fwebster-typescript.svg)](https://badge.fury.io/js/%40tpw%2Fwebster-typescript.svg) [![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/@tpw/webster-typescript.svg)](https://img.shields.io/bundlephobia/minzip/@tpw/webster-typescript.svg)
 
 In TypeScript, the configuration file can extend from a base file. This package provided a few common base configuration files to simplify TypeScript project setup.
 
@@ -13,8 +15,12 @@ Below are two documentation we have also found useful to have on hand while sett
 
 ## Installation
 
+Install [typescript](https://www.typescriptlang.org/) and `@tpw/webster-typescript`:
+
+**With npm**
+
 ```bash
-$ yarn add --dev @tpw/typescript-configs
+npm install --save-dev typescript @tpw/webster-typescript
 ```
 
 ## Usage
@@ -27,7 +33,7 @@ A typical setup where the application sit in `[project root]/app` folder is as f
 
 ```json
 {
-  "extends": "@tpw/typescript-configs/application.json",
+  "extends": "@tpw/webster-typescript/application.json",
   "compilerOptions": {
     "baseUrl": ".",
     "rootDir": ".",
@@ -43,7 +49,7 @@ Similarly for a react library project. Create a `tsconfig.json` in the root of y
 
 ```json
 {
-  "extends": "@tpw/typescript-configs/library.json",
+  "extends": "@tpw/webster-typescript/library.json",
   "compilerOptions": {
     "baseUrl": "./src",
     "rootDir": "."
@@ -58,7 +64,7 @@ A configuration file is provided that included styles setup and a more conservat
 
 ```json
 {
-  "extends": "@tpw/typescript-configs/dom.json",
+  "extends": "@tpw/webster-typescript/dom.json",
   "compilerOptions": {
     "baseUrl": ".",
     "rootDir": "."
@@ -72,7 +78,7 @@ A base configuration file is also provided if the above does not fit your need.
 
 ```json
 {
-  "extends": "@tpw/typescript-configs/base.json",
+  "extends": "@tpw/webster-typescript/base.json",
   "compilerOptions": {
     "baseUrl": ".",
     "rootDir": "."
@@ -86,11 +92,11 @@ A base configuration file is also provided if the above does not fit your need.
 
 There are times when the type failure occur inside of a library your project is consuming, and having `skipLibCheck: true` does not resolved it. In this scenario, add an `exclude` option to your `tsconfig.json`.
 
-eg.
+For example:
 
 ```json
 {
-  "extends": "@tpw/typescript-configs/base.json",
+  "extends": "@tpw/webster-typescript/base.json",
   "compilerOptions": {
     "baseUrl": ".",
     "rootDir": ".",
