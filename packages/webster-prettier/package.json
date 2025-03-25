@@ -2,9 +2,10 @@
   "name": "@tpw/webster-prettier",
   "version": "1.0.4",
   "license": "MIT",
-  "description": "A shared Prettier configuration for the Webster framework.",
+  "description": "A shared Prettier configuration for the Webster framework that can be extended.",
   "keywords": [
     "prettier",
+    "webster-prettier",
     "config",
     "tpw",
     "webster"

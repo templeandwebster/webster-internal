@@ -1,14 +1,14 @@
 {
-  "name": "@tpw/stylelint-config",
-  "version": "1.0.0",
+  "name": "@tpw/webter-stylelint",
+  "version": "1.0.4",
   "license": "MIT",
-  "description": "A shared stylelint rules and config that can be extended.",
+  "description": "A shared stylelint rules and config for the Webster framework that can be extended.",
   "keywords": [
     "stylelint",
-    "stylelint-config",
+    "webster-stylelint",
     "config",
     "tpw",
-    "css"
+    "webster"
   ],
   "main": "index.js",
   "publishConfig": {
@@ -17,13 +17,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/templeandwebster/web-configs.git",
-    "directory": "packages/stylelint-config"
+    "url": "git+https://github.com/templeandwebster/webster-internal.git",
+    "directory": "packages/webster-stylelint"
   },
   "bugs": {
-    "url": "https://github.com/templeandwebster/web-configs/issues"
+    "url": "https://github.com/templeandwebster/webster-internal/issues"
   },
-  "homepage": "https://github.com/templeandwebster/web-configs/blob/main/packages/stylelint-config/README.md",
+  "homepage": "https://github.com/templeandwebster/webster-internal/blob/main/packages/webster-stylelint/README.md",
   "dependencies": {
     "postcss": "^8.4.39",
     "postcss-scss": "^4.0.9",

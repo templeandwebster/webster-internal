@@ -9,8 +9,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Initial release of `@tpw/webster-prettier` package
-- Basic Prettier configuration
-- MDX support for markdown files
-- TypeScript support
-- ESLint integration
+- Initial release of  `@tpw/webster-stylelint` package

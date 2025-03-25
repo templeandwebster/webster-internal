@@ -1,10 +1,14 @@
 # `@tpw/webster-prettier`
 
-A shared Prettier configuration for the Webster framework.
+Temple & Webster's shared Prettier configuration for the Webster frontend framework.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](../../LICENSE.md) [![npm version](https://badge.fury.io/js/%40tpw%2Fwebster-prettier.svg)](https://badge.fury.io/js/%40tpw%2Fwebster-prettier.svg) [![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/@tpw/webster-prettier.svg)](https://img.shields.io/bundlephobia/minzip/@tpw/webster-prettier.svg)
 
 ## Installation
+
+Install [prettier](https://prettier.io/) and `@tpw/webster-prettier`:
+
+**With npm**
 
 ```bash
 npm install --save-dev @tpw/webster-prettier
@@ -14,7 +18,7 @@ npm install --save-dev @tpw/webster-prettier
 
 Temple & Webster's shared prettier config comes bundled in `@tpw/webster-prettier`. 
 
-To enable these rules, add a `prettier` property to your project's `package.json`:
+To enable these rules, add a `prettier` property to your project's `package.json`. See the [prettier configuration docs](https://prettier.io/docs/configuration) for more details.
 
 ```json
 {
