@@ -1,5 +1,5 @@
 {
-  "name": "@tpw/webter-stylelint",
+  "name": "@tpw/webster-stylelint",
   "version": "1.0.5",
   "license": "MIT",
   "description": "A shared stylelint rules and config for the Webster framework that can be extended.",
