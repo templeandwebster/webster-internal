@@ -1,6 +1,6 @@
 {
   "name": "@tpw/webter-stylelint",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "license": "MIT",
   "description": "A shared stylelint rules and config for the Webster framework that can be extended.",
   "keywords": [
@@ -11,6 +11,11 @@
     "webster"
   ],
   "main": "index.js",
+  "files": [
+    "index.js",
+    "prettier.js",
+    "rules/"
+  ],  
   "publishConfig": {
     "access": "public",
     "@tpw:registry": "https://registry.npmjs.org"
