@@ -1,0 +1,70 @@
+version: 2
+updates:
+  # Enable version updates for npm
+  - package-ecosystem: "npm"
+    # Look for `package.json` and `lock` files in the `root` directory
+    directory: "/"
+    # Check for updates once a week
+    schedule:
+      interval: "weekly"
+      # Specify time for the first day to check for updates
+      time: "09:00"
+      # Specify timezone (default: UTC)
+      timezone: "UTC"
+    # Specify target branch to create pull requests against
+    target-branch: "main"
+    # Add labels on pull requests
+    labels:
+      - "dependencies"
+    # Add reviewers
+    reviewers:
+      - "project-maintainers"
+    # Add assignees
+    assignees:
+      - "project-maintainers"
+    # Limit to 5 open pull requests for npm dependencies
+    open-pull-requests-limit: 5
+    # Group all updates together
+    groups:
+      dependencies:
+        patterns:
+          - "*"
+    # Add commit message prefix for all commits created by Dependabot
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+
+  # Enable version updates for GitHub Actions
+  - package-ecosystem: "github-actions"
+    # Look for `.github/workflows` files in the `root` directory
+    directory: "/"
+    # Check for updates once a week
+    schedule:
+      interval: "weekly"
+      # Specify time for the first day to check for updates
+      time: "09:00"
+      # Specify timezone (default: UTC)
+      timezone: "UTC"
+    # Add labels on pull requests
+    labels:
+      - "dependencies"
+      - "github-actions"
+    # Add reviewers
+    reviewers:
+      - "project-maintainers"
+    # Add assignees
+    assignees:
+      - "project-maintainers"
+    # Specify target branch to create pull requests against
+    target-branch: "main"
+    # Limit to 3 open pull requests for GitHub Actions
+    open-pull-requests-limit: 3
+    # Group all updates together
+    groups:
+      github-actions:
+        patterns:
+          - "*"
+    # Add commit message prefix for all commits created by Dependabot
+    commit-message:
+      prefix: "ci"
+      include: "scope" 

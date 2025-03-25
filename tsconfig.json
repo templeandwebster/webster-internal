@@ -1,0 +1,8 @@
+{
+    "files": [],
+    "references": [
+      {"path": "./packages/webster-prettier"},
+      {"path": "./packages/webster-stylelint"},
+      {"path": "./packages/webster-typescript"}
+    ]
+  }
