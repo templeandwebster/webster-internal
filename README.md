@@ -1,4 +1,4 @@
-# Web Configs
+# Webster Internal
 
 This repository contains common configurations for building web apps at Temple & Webster.
 

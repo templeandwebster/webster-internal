@@ -1,0 +1,32 @@
+{
+  "name": "@tpw/webster-prettier",
+  "version": "1.0.4",
+  "license": "MIT",
+  "description": "A shared Prettier configuration for the Webster framework.",
+  "keywords": [
+    "prettier",
+    "config",
+    "tpw",
+    "webster"
+  ],
+  "main": "index.js",
+  "sideEffects": false,
+  "files": [
+    "index.js",
+    ".prettierignore"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "@tpw:registry": "https://registry.npmjs.org"
+  },
+  "author": "Temple & Webster",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/templeandwebster/webster-internal.git",
+    "directory": "packages/webstter-prettier"
+  },
+  "bugs": {
+    "url": "https://github.com/templeandwebster/webster-internal/issues"
+  },
+  "homepage": "https://github.com/templeandwebster/webster-internal/blob/main/packages/webster-prettier/README.md"
+}
