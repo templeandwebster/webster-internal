@@ -12,6 +12,12 @@
     "webster",
     "tpw"
   ],
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "plugin.js",
+    "lib"
+  ],
   "publishConfig": {
     "access": "public",
     "@tpw:registry": "https://registry.npmjs.org"
