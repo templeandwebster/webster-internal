@@ -4,6 +4,8 @@ module.exports = {
   testPathIgnorePatterns: ['.*/tests/fixtures/'],
   testRegex: '.*\\.test\\.(tsx?|jsx?)$',
   projects: [
+    '<rootDir>/packages/webster-babel',
+    '<rootDir>/packages/webster-postcss',
     '<rootDir>/packages/webster-prettier',
     '<rootDir>/packages/webster-stylelint',
     '<rootDir>/packages/webster-typescript',
