@@ -1,0 +1,46 @@
+{
+  "name": "@tpw/webster-babel",
+  "version": "1.0.0",
+  "license": "MIT",
+  "description": "A shared Babel preset for the Webster frontend framework which can be extended.",
+  "keywords": [
+    "babel",
+    "babel-preset",
+    "webster",
+    "tpw"
+  ],
+  "main": "index.js",
+  "publishConfig": {
+    "access": "public",
+    "@shopify:registry": "https://registry.npmjs.org"
+  },
+  "author": "Temple & Webster Group Ltd",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/templeandwebster/webster-internal.git",
+    "directory": "packages/webster-babel"
+  },
+  "bugs": {
+    "url": "https://github.com/templeandwebster/webster-internal/issues"
+  },
+  "homepage": "https://github.com/templeandwebster/webster-internal/blob/main/packages/webster-babel/README.md",
+  "dependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/plugin-proposal-class-properties": "^7.16.0",
+    "@babel/plugin-proposal-decorators": "^7.16.4",
+    "@babel/plugin-proposal-dynamic-import": "^7.16.0",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.16.0",
+    "@babel/plugin-proposal-numeric-separator": "^7.16.0",
+    "@babel/plugin-proposal-optional-chaining": "^7.16.0",
+    "@babel/plugin-proposal-private-methods": "^7.16.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.16.0",
+    "@babel/plugin-transform-react-constant-elements": "^7.16.0",
+    "@babel/plugin-transform-runtime": "^7.16.4",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-react": "^7.16.0",
+    "@babel/preset-typescript": "^7.16.0",
+    "@babel/runtime": "^7.16.3",
+    "babel-plugin-react-test-id": "^1.0.2",
+    "babel-plugin-transform-inline-environment-variables": "^0.4.3"
+  }
+}
