@@ -1,0 +1,40 @@
+{
+  "name": "@tpw/webster-postcss",
+  "version": "1.0.0",
+  "license": "MIT",
+  "description": "A shared PostCSS preset for the Webster framework that can be extended.",
+  "keywords": [
+    "postcss",
+    "postcss-plugin",
+    "css",
+    "webster",
+    "tpw"
+  ],
+  "main": "index.js",
+  "publishConfig": {
+    "access": "public",
+    "@tpw:registry": "https://registry.npmjs.org"
+  },
+  "author": "Temple & Webster",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/templeandwebster/webster-internal.git",
+    "directory": "packages/webster-postcss"
+  },
+  "bugs": {
+    "url": "https://github.com/templeandwebster/webster-internal/issues"
+  },
+  "homepage": "https://github.com/templeandwebster/webster-internal/blob/main/packages/webster-postcss/README.md",
+  "dependencies": {
+    "autoprefixer": "^10.2.5",
+    "postcss-calc": "^8.0.0",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-will-change": "^4.0.1"
+  },
+  "devDependencies": {
+    "postcss": "^8.2.8"
+  },
+  "peerDependencies": {
+    "postcss": "^8.2.8"
+  }
+}
