@@ -25,9 +25,6 @@ describe('stylelint-plugin E2E Tests', () => {
   it('configures scss files', () => {
     const result = runStylelint('scss.*.scss');
 
-    // The trailing `${''}` is very silly, but stylelint spits out a bunch of
-    // trailing whitespace and editors really want to remove that trailing
-    // whitespace when saving the file
     const expectedResult = `
 ::error file=scss.invalid.scss,line=16,col=12,endLine=16,endColumn=22,title=Stylelint problem::Expected "$value * 1px" instead of "#{$value}px". Consider writing "value" in terms of px originally. (scss/dimension-no-non-numeric-values)
 ::error file=scss.invalid.scss,line=22,col=3,endLine=22,endColumn=8,title=Stylelint problem::Unexpected union class name with the parent selector (&) (scss/selector-no-union-class-name)
@@ -45,7 +42,19 @@ function runStylelint(pattern) {
 
   const result = spawnSync(stylelintCmd, ['--formatter=json', pattern], {
     cwd: stylelintCwd,
+    env: {
+      ...process.env,
+      NODE_OPTIONS: '--experimental-vm-modules',
+    },
   });
+
+  if (!result.stderr) {
+    return {
+      status: result.status,
+      output: result.stdout?.toString().trim() || '',
+      error: '',
+    };
+  }
 
   const jsonErrors = JSON.parse(result.stderr.toString().trim());
 
@@ -67,7 +76,7 @@ function runStylelint(pattern) {
 
   return {
     status: result.status,
-    output: result.stdout.toString().trim(),
+    output: result.stdout?.toString().trim() || '',
     error: errorLines.join('\n'),
   };
 }

@@ -10,10 +10,14 @@ const config = {
       {
         presets: [
           ['@babel/preset-env', { targets: { node: 'current' } }],
+          '@babel/preset-typescript',
         ],
       },
     ],
   },
+  moduleFileExtensions: ['ts', 'js', 'json', 'node'],
+  testRunner: 'jest-jasmine2',
+  setupFiles: ['<rootDir>/jest.setup.js'],
 };
 
 module.exports = config;

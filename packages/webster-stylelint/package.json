@@ -17,7 +17,7 @@
     "rules/"
   ],
   "scripts": {
-    "test": "jest --passWithNoTests"
+    "test": "node --experimental-vm-modules ../../node_modules/jest/bin/jest.js --passWithNoTests"
   },
   "publishConfig": {
     "access": "public",
@@ -44,10 +44,13 @@
   },
   "devDependencies": {
     "@babel/core": "^7.26.10",
+    "@babel/jest": "^29.7.0",
     "@babel/preset-env": "^7.26.9",
+    "@babel/preset-typescript": "^7.27.0",
     "babel-jest": "^29.7.0",
     "jest": "^29.7.0",
-    "jest-preset-stylelint": "^7.0.1",
+    "jest-jasmine2": "^29.7.0",
+    "jest-preset-stylelint": "^7.2.0",
     "stylelint": "^16.9.0"
   }
 }
