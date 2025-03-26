@@ -13,6 +13,13 @@ const config = {
     ],
   },
   moduleFileExtensions: ['ts', 'js', 'json', 'node'],
+  testMatch: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
+  globals: {
+    'ts-jest': {
+      tsconfig: 'tsconfig.json',
+      useESM: true,
+    },
+  },
 };
 
 module.exports = config;
