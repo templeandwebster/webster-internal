@@ -8,6 +8,7 @@
   "include": [
     // Paths to lint
     "packages/webster-babel",
+    "packages/webster-eslint",
     "packages/webster-postcss",
     "packages/webster-prettier",
     "packages/webster-stylelint",

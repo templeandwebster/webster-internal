@@ -1,0 +1,59 @@
+{
+  "name": "@tpw/webster-eslint",
+  "version": "1.0.0",
+  "license": "MIT",
+  "description": "A shared ESLint rules and configs for the Webster frontend framework which can be extended.",
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "eslintplugin",
+    "eslint-config",
+    "eslint-plugin",
+    "webster",
+    "tpw"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "@tpw:registry": "https://registry.npmjs.org"
+  },
+  "author": "Temple & Webster Group Ltd",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/templeandwebster/webster-internal.git",
+    "directory": "packages/webster-eslint"
+  },
+  "bugs": {
+    "url": "https://github.com/templeandwebster/webster-internal/issues"
+  },
+  "homepage": "https://github.com/templeandwebster/webster-internal/blob/main/packages/webster-eslint/README.md",
+  "dependencies": {
+    "change-case": "^4.1.2",
+    "common-tags": "^1.8.2",
+    "doctrine": "^2.1.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-module-utils": "^2.12.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jest": "^28.9.0",
+    "eslint-plugin-jest-formatting": "^3.1.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-n": "^17.5.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-promise": "^7.2.1",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-sort-class-members": "^1.21.0",
+    "globals": "^15.13.0",
+    "jsx-ast-utils": "^3.3.5",
+    "pkg-dir": "^5.0.0",
+    "pluralize": "^8.0.0",
+    "typescript-eslint": "^8.18.0"
+  },
+  "peerDependencies": {
+    "eslint": "^8.56.0"
+  },
+  "devDependencies": {
+    "react": "^16.13.1",
+    "typescript": "^5.0.0"
+  }
+}
