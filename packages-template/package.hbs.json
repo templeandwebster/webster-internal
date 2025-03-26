@@ -1,0 +1,29 @@
+{
+  "name": "@tpw/{{name}}",
+  "version": "0.0.0",
+  "license": "MIT",
+  "description": "{{description}}",
+  "keywords": [
+    "{{name}}",
+    "{{package}}",
+    "tpw",
+    "webster"
+  ],
+  "main": "src/index.js",
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public",
+    "@tpw:registry": "https://registry.npmjs.org"
+  },
+  "author": "Temple & Webster Group Inc.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/templeandwebster/webster-internal.git",
+    "directory": "packages/{{name}}"
+  },
+  "bugs": {
+    "url": "https://github.com/templeandwebster/webster-internal/issues"
+  },
+  "homepage": "https://github.com/templeandwebster/webster-internal/blob/main/packages/{{name}}/README.md",
+  "dependencies": {}
+}
