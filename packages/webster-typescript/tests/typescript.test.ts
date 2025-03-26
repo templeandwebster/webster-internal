@@ -42,6 +42,6 @@ describe('typescript-preset-e2e-test', () => {
     });
 
     expect(result?.code).toBeDefined();
-    expect(result?.code).toContain('_applyDecoratedDescriptor');
+    expect(result?.code).toContain('_applyDecs');
   });
 });

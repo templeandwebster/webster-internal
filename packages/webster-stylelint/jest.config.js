@@ -16,8 +16,8 @@ const config = {
     ],
   },
   moduleFileExtensions: ['ts', 'js', 'json', 'node'],
-  testRunner: 'jest-jasmine2',
   setupFiles: ['<rootDir>/jest.setup.js'],
+  testMatch: ['<rootDir>/tests/**/*.test.js'],
 };
 
 module.exports = config;

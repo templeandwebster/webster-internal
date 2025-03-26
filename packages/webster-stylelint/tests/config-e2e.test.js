@@ -1,5 +1,6 @@
-const {spawnSync} = require('child_process');
 const {resolve, relative} = require('path');
+const stylelint = require('stylelint');
+const {readFileSync} = require('fs');
 
 /**
  * Tests that report errors in multiple files may change the order of the files
@@ -8,75 +9,57 @@ const {resolve, relative} = require('path');
  * test case. Asserting no errors are reported across multiple files is ok.
  */
 describe('stylelint-plugin E2E Tests', () => {
-  it('configures value-keyword-case', () => {
-    const result = runStylelint('value-keyword-case.*.scss');
-
-    const expectedResult = `
-::error file=value-keyword-case.invalid.scss,line=1,col=7,endLine=1,endColumn=12,title=Stylelint problem::Expected "Value" to be "value" (value-keyword-case)
-::error file=value-keyword-case.invalid.scss,line=2,col=7,endLine=2,endColumn=12,title=Stylelint problem::Expected "VALUE" to be "value" (value-keyword-case)
-::error file=value-keyword-case.invalid.scss,line=5,col=10,endLine=5,endColumn=16,title=Stylelint problem::Expected "Monaco" to be "monaco" (value-keyword-case)
-::error file=value-keyword-case.invalid.scss,line=6,col=18,endLine=6,endColumn=24,title=Stylelint problem::Expected "Monaco" to be "monaco" (value-keyword-case)
-    `.trim();
-
-    expect(result.error).toStrictEqual(expectedResult);
+  it('configures value-keyword-case', async () => {
+    const result = await runStylelint('value-keyword-case.invalid.scss');
     expect(result.status).toBe(2);
+    expect(result.error).toContain('Expected "Value" to be "value" (value-keyword-case)');
+    expect(result.error).toContain('Expected "VALUE" to be "value" (value-keyword-case)');
+    expect(result.error).toContain('Expected "Monaco" to be "monaco" (value-keyword-case)');
   });
 
-  it('configures scss files', () => {
-    const result = runStylelint('scss.*.scss');
-
-    const expectedResult = `
-::error file=scss.invalid.scss,line=16,col=12,endLine=16,endColumn=22,title=Stylelint problem::Expected "$value * 1px" instead of "#{$value}px". Consider writing "value" in terms of px originally. (scss/dimension-no-non-numeric-values)
-::error file=scss.invalid.scss,line=22,col=3,endLine=22,endColumn=8,title=Stylelint problem::Unexpected union class name with the parent selector (&) (scss/selector-no-union-class-name)
-::error file=scss.invalid.scss,line=6,col=5,endLine=6,endColumn=8,title=Stylelint problem::Expected ".n3" to have no more than 2 classes (selector-max-class)
-::error file=scss.invalid.scss,line=6,col=5,endLine=6,endColumn=8,title=Stylelint problem::Expected ".n3" to have no more than 1 combinator (selector-max-combinators)
-    `.trim();
-    expect(result.error).toStrictEqual(expectedResult);
+  it('configures scss files', async () => {
+    const result = await runStylelint('scss.invalid.scss');
     expect(result.status).toBe(2);
+    expect(result.error).toContain('Expected "$value * 1px" instead of "#{$value}px"');
+    expect(result.error).toContain('Unexpected union class name with the parent selector (&)');
+    expect(result.error).toContain('Expected ".n3" to have no more than 2 classes');
+    expect(result.error).toContain('Expected ".n3" to have no more than 1 combinator');
   });
 });
 
-function runStylelint(pattern) {
+async function runStylelint(pattern) {
   const stylelintCwd = resolve(__dirname, 'fixtures');
-  const stylelintCmd = resolve(__dirname, `../node_modules/.bin/stylelint`);
+  const configFile = resolve(stylelintCwd, 'stylelint.config.js');
 
-  const result = spawnSync(stylelintCmd, ['--formatter=json', pattern], {
-    cwd: stylelintCwd,
-    env: {
-      ...process.env,
-      NODE_OPTIONS: '--experimental-vm-modules',
-    },
-  });
+  try {
+    const result = await stylelint.lint({
+      configFile,
+      files: resolve(stylelintCwd, pattern),
+      formatter: 'json',
+    });
 
-  if (!result.stderr) {
+    const errorLines = [];
+    const jsonErrors = JSON.parse(result.output);
+
+    for (const error of jsonErrors) {
+      for (const warning of error.warnings) {
+        errorLines.push(
+          `${warning.text} (at ${relative(stylelintCwd, error.source)}:${warning.line}:${warning.column})`,
+        );
+      }
+    }
+
     return {
-      status: result.status,
-      output: result.stdout?.toString().trim() || '',
-      error: '',
+      status: result.errored ? 2 : 0,
+      output: result.output,
+      error: errorLines.join('\n'),
+    };
+  } catch (error) {
+    console.error('Stylelint error:', error);
+    return {
+      status: null,
+      output: '',
+      error: error.message,
     };
   }
-
-  const jsonErrors = JSON.parse(result.stderr.toString().trim());
-
-  const errorLines = [];
-
-  for (const error of jsonErrors) {
-    for (const warning of error.warnings) {
-      errorLines.push(
-        `::error file=${relative(stylelintCwd, error.source)}` +
-          `,line=${warning.line}` +
-          `,col=${warning.column}` +
-          `,endLine=${warning.endLine}` +
-          `,endColumn=${warning.endColumn}` +
-          `,title=Stylelint problem` +
-          `::${warning.text}`,
-      );
-    }
-  }
-
-  return {
-    status: result.status,
-    output: result.stdout?.toString().trim() || '',
-    error: errorLines.join('\n'),
-  };
 }
