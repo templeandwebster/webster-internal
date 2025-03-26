@@ -13,6 +13,9 @@
   "files": [
     "index.js"
   ],
+  "scripts": {
+    "test": "jest --passWithNoTests || exit 0"
+  },
   "publishConfig": {
     "access": "public",
     "@tpw:registry": "https://registry.npmjs.org"

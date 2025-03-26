@@ -23,5 +23,11 @@
   "bugs": {
     "url": "https://github.com/templeandwebster/webster-internal/issues"
   },
-  "homepage": "https://github.com/templeandwebster/webster-internal/blob/main/packages/webster-typescript/README.md"
+  "homepage": "https://github.com/templeandwebster/webster-internal/blob/main/packages/webster-typescript/README.md",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "test": "jest --passWithNoTests"
+  }
 }

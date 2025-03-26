@@ -11,11 +11,15 @@
     "webster"
   ],
   "main": "index.js",
+  "type": "module",
   "sideEffects": false,
   "files": [
     "index.js",
     ".prettierignore"
   ],
+  "scripts": {
+    "test": "node --experimental-vm-modules ../../node_modules/jest/bin/jest.js --passWithNoTests"
+  },
   "publishConfig": {
     "access": "public",
     "@tpw:registry": "https://registry.npmjs.org"
