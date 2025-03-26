@@ -1,9 +1,0 @@
-{
-    "files": [],
-    "references": [
-      {"path": "./packages/webster-babel"},
-      {"path": "./packages/webster-prettier"},
-      {"path": "./packages/webster-stylelint"},
-      {"path": "./packages/webster-typescript"}
-    ]
-  }
