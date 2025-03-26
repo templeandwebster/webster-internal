@@ -1,23 +1,23 @@
 {
     "name": "webster-internal",
+    "author": "Temple & Webster Group Ltd",
     "version": "0.1.0",
-    "private": false,
+    "license": "MIT",
+    "private": true,
     "packageManager": "pnpm@10.6.5",
     "engines": {
-      "node": ">=20.11.1"
+      "node": ">=20.10.0"
     },
     "scripts": {
       "build": "turbo run build",
-      "dev": "turbo run dev",
       "lint": "turbo run lint",
       "test": "turbo run test",
-      "test:watch": "jest --watch",
       "clean": "turbo run clean && rm -rf node_modules",
       "format": "prettier . --write",
       "type-check": "tsc --build",
       "changeset": "changeset",
       "version-packages": "changeset version && pnpm install --lockfile-only",
-      "release-packages": "pnpm build:release && changeset publish"
+      "release-packages": "pnpm build && changeset publish"
     },
     "devDependencies": {
     "@changesets/changelog-github": "^0.5.1",
