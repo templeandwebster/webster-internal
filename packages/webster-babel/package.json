@@ -10,9 +10,12 @@
     "tpw"
   ],
   "main": "index.js",
+  "files": [
+    "index.js"
+  ],
   "publishConfig": {
     "access": "public",
-    "@shopify:registry": "https://registry.npmjs.org"
+    "@tpw:registry": "https://registry.npmjs.org"
   },
   "author": "Temple & Webster Group Ltd",
   "repository": {
