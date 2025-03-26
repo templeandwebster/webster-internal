@@ -17,7 +17,7 @@
     "rules/"
   ],
   "scripts": {
-    "test": "jest --passWithNoTests || exit 0"
+    "test": "jest --passWithNoTests"
   },
   "publishConfig": {
     "access": "public",
@@ -43,6 +43,10 @@
     "stylelint": ">=16.0.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.26.10",
+    "@babel/preset-env": "^7.26.9",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0",
     "jest-preset-stylelint": "^7.0.1",
     "stylelint": "^16.9.0"
   }

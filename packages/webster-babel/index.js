@@ -76,8 +76,8 @@ module.exports = function websterCommonPreset(
             require.resolve('@babel/plugin-proposal-decorators'),
             {legacy: true},
           ],
-          require.resolve('@babel/plugin-proposal-class-properties'),
-          require.resolve('@babel/plugin-proposal-private-methods'),
+          require.resolve('@babel/plugin-transform-class-properties'),
+          require.resolve('@babel/plugin-transform-private-methods'),
         ]
       : []),
 
@@ -90,9 +90,9 @@ module.exports = function websterCommonPreset(
     // are backported to acorn v6)
     ...(isWebpack5 === false
       ? [
-          require.resolve('@babel/plugin-proposal-numeric-separator'),
-          require.resolve('@babel/plugin-proposal-nullish-coalescing-operator'),
-          require.resolve('@babel/plugin-proposal-optional-chaining'),
+          require.resolve('@babel/plugin-transform-numeric-separator'),
+          require.resolve('@babel/plugin-transform-nullish-coalescing-operator'),
+          require.resolve('@babel/plugin-transform-optional-chaining'),
         ]
       : []),
 
@@ -101,8 +101,8 @@ module.exports = function websterCommonPreset(
     // webpack 4 is still on acron 6, not required for v5 of webpack
     ...(isWebpack5 === false && typescript === false
       ? [
-          require.resolve('@babel/plugin-proposal-class-properties'),
-          require.resolve('@babel/plugin-proposal-private-methods'),
+          require.resolve('@babel/plugin-transform-class-properties'),
+          require.resolve('@babel/plugin-transform-private-methods'),
         ]
       : []),
 
