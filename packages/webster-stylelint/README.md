@@ -1,24 +1,30 @@
-# `@tpw/webster-stylelint`
+# Webster Stylelint
 
-Temple & Webster's stylelint rules and configuration for the Webster frontend framework.
+Temple & Webster's stylelint rules, configuration, and tooling for the Webster framework and design system.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](../../LICENSE.md) [![npm version](https://badge.fury.io/js/%40tpw%2Fwebster-stylelint.svg)](https://badge.fury.io/js/%40tpw%2Fwebster-stylelint.svg) [![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/@tpw/webster-stylelint.svg)](https://img.shields.io/bundlephobia/minzip/@tpw/webster-stylelint.svg)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](../../LICENSE.md) [![npm version](https://badge.fury.io/js/%40tpw%2Fwebster-stylelint.svg)](https://badge.fury.io/js/%40tpw%2Fwebster-stylelint.svg) 
 
 ## Installation
 
 Install [stylelint](https://stylelint.io/) and `@tpw/webster-stylelint`:
 
-**With npm**
-
 ```bash
 npm install --save-dev stylelint @tpw/webster-stylelint
 ```
 
+For design system rules, also install the tokens package:
+
+```bash
+npm install --save-dev @tpw/webster-tokens
+```
+
 ## Usage
 
-Temple & Webster’s stylelint rules come bundled in `@tpw/webster-stylelint`. 
+Webster Stylelint provides multiple configurations that can be extended:
 
-To enable these rules, add a `stylelint` property in your `package.json`. See the [stylelint configuration docs](https://stylelint.io/user-guide/configuration/) for more details.
+### Basic Configuration
+
+For general CSS/SCSS styling rules:
 
 ```json
 "stylelint": {
@@ -26,7 +32,37 @@ To enable these rules, add a `stylelint` property in your `package.json`. See th
 }
 ```
 
-Now you can run stylelint by adding the following linting script to your `package.json`. See the [stylelint CLI docs](https://stylelint.io/user-guide/cli/) for more details.
+or explicitly:
+
+```json
+"stylelint": {
+  "extends": ["@tpw/webster-stylelint/base"]
+}
+```
+
+### Design System Configuration
+
+For enforcing Webster Design System token usage (requires `@tpw/webster-tokens`):
+
+```json
+"stylelint": {
+  "extends": ["@tpw/webster-stylelint/design-system"]
+}
+```
+
+### Prettier Integration
+
+For formatting SCSS files with Prettier:
+
+```json
+"stylelint": {
+  "extends": ["@tpw/webster-stylelint/prettier"]
+}
+```
+
+## Running Stylelint
+
+Add a linting script to your `package.json`:
 
 ```json
 "scripts": {
@@ -34,41 +70,60 @@ Now you can run stylelint by adding the following linting script to your `packag
 }
 ```
 
-**With npm**
+Then run:
 
 ```bash
 npm run stylelint
 ```
 
-## Prettier
+## Configuration Details
 
-This config also includes a prettier config which can be extended to format `.scss`.
-Using the [`stylelint-prettier`](https://github.com/bpscott/stylelint-prettier) plugin, prettier changes are exposed as stylelint rule violations.
+### Base Configuration
 
-Install [`prettier`](https://github.com/prettier/prettier):
+The base configuration provides general SCSS/CSS best practices and style guidelines:
 
-```bash
-$ yarn add --dev prettier
+- Enforces consistent formatting
+- Prevents common CSS mistakes 
+- Ensures CSS best practices
+- Orders properties alphabetically
+
+### Design System Configuration
+
+The design system configuration extends the base config and adds:
+
+- Enforcement of Webster Design System tokens
+- Prevents use of raw color values
+- Enforces usage of spacing tokens
+- Ensures consistent typography
+- Validates custom properties against the Webster token system
+
+> Note: Design system rules require the `@tpw/webster-tokens` package. If not installed, these rules will be disabled.
+
+### Prettier Configuration
+
+The Prettier integration adds:
+
+- Formatting via the stylelint-prettier plugin
+- Reports Prettier format violations as stylelint rule violations
+- Autofixes format issues with `stylelint --fix`
+
+## Package Structure
+
+The package follows modern Stylelint plugin structure:
+
+```
+webster-stylelint/
+├── configs/          # Configuration presets
+│   ├── base.js       # Base styling rules
+│   ├── design-system.js # Design system enforcement
+│   └── prettier.js   # Prettier integration
+├── lib/
+│   └── rules/        # All rules in a single directory
+│       ├── content-no-strings/  # Base rule 
+│       ├── coverage/            # Design system rule
+│       └── ...                  # Other rules
+├── index.js          # Main entry point
+└── package.json      # Package metadata
 ```
 
-Extend the config in your `package.json`:
-
-```json
-"stylelint": {
-  "extends": [
-    "@tpw/stylelint-config/prettier"
-  ]
-}
-```
-
-Add a prettier config in `package.json`:
-
-```json
-"prettier": {
-  "singleQuote": true,
-  "trailingComma": "es5",
-  "bracketSpacing": false
-}
-```
-
-Prettier fixes shall be reported when you run `stylelint **/*.css` and shall be autofixed when you run `stylelint --fix **/*.scss`.
+This structure follows the standard pattern used by official Stylelint plugins and makes it easy to find and maintain rules.

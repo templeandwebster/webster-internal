@@ -1,23 +1,30 @@
 {
   "name": "@tpw/webster-stylelint",
-  "version": "1.0.5",
+  "version": "2.0.0",
   "license": "MIT",
-  "description": "A shared stylelint rules and config for the Webster framework that can be extended.",
+  "description": "Stylelint rules, configurations and tooling for the Webster framework and design system",
   "keywords": [
     "stylelint",
     "webster-stylelint",
-    "config",
+    "webster",
     "tpw",
-    "webster"
+    "design-system"
   ],
   "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./base": "./configs/base.js",
+    "./design-system": "./configs/design-system.js",
+    "./prettier": "./configs/prettier.js"
+  },
   "files": [
     "index.js",
-    "prettier.js",
-    "rules/"
+    "configs/",
+    "lib/"
   ],
   "scripts": {
-    "test": "node --experimental-vm-modules ../../node_modules/jest/bin/jest.js --passWithNoTests"
+    "test": "jest",
+    "lint": "eslint --cache ."
   },
   "publishConfig": {
     "access": "public",
@@ -25,31 +32,43 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/templeandwebster/webster-internal.git",
+    "url": "git+https://github.com/templeandwebster/webster.git",
     "directory": "packages/webster-stylelint"
   },
   "bugs": {
-    "url": "https://github.com/templeandwebster/webster-internal/issues"
+    "url": "https://github.com/templeandwebster/webster/issues"
   },
-  "homepage": "https://github.com/templeandwebster/webster-internal/blob/main/packages/webster-stylelint/README.md",
+  "homepage": "https://github.com/templeandwebster/webster/blob/main/packages/webster-stylelint/README.md",
   "dependencies": {
     "postcss": "^8.4.39",
     "postcss-scss": "^4.0.9",
+    "postcss-value-parser": "^4.2.0",
+    "postcss-media-query-parser": "^0.2.3",
     "stylelint-order": "^6.0.4",
     "stylelint-prettier": "^5.0.0",
     "stylelint-scss": "^6.8.1"
   },
   "peerDependencies": {
-    "stylelint": ">=16.0.0"
+    "stylelint": ">=16.0.0",
+    "@tpw/webster-tokens": ">=1.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@tpw/webster-tokens": {
+      "optional": true
+    }
   },
   "devDependencies": {
     "@babel/core": "^7.26.10",
     "@babel/preset-env": "^7.26.9",
     "@babel/preset-typescript": "^7.27.0",
+    "@tpw/webster-tokens": "^1.0.0",
     "babel-jest": "^29.7.0",
     "jest": "^29.7.0",
     "jest-jasmine2": "^29.7.0",
     "jest-preset-stylelint": "^7.2.0",
     "stylelint": "^16.9.0"
+  },
+  "jest": {
+    "preset": "jest-preset-stylelint"
   }
-}
+} 
