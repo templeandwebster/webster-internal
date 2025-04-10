@@ -6,6 +6,7 @@ node_modules
 # Build outputs
 dist
 build
+build-internal
 coverage
 .next
 out
@@ -35,4 +36,4 @@ yarn-error.log*
 # Package manager files
 package-lock.json
 yarn.lock
-pnpm-lock.yaml 
+pnpm-lock.yaml
