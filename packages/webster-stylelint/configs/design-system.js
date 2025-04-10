@@ -1,7 +1,7 @@
 /**
  * Design System configuration for Webster projects
  * Enforces usage of Webster design tokens and components
- * 
+ *
  * Requires @tpw/webster-tokens package to be installed
  */
 
@@ -17,13 +17,13 @@ try {
 }
 
 // Import base configuration
-const baseConfig = require('./base');
+const _baseConfig = require('./base');
 
 // Import utilities if tokens are available
-let createVar, getThemeVarNames, themeDefault;
+let _createVar, getThemeVarNames, themeDefault;
 if (hasTokens) {
   const tokens = require('@tpw/webster-tokens');
-  createVar = tokens.createVar;
+  _createVar = tokens.createVar;
   getThemeVarNames = tokens.getThemeVarNames;
   themeDefault = tokens.themeDefault;
 }
@@ -142,7 +142,7 @@ const designSystemConfig = {
           // Additional coverage rules from webster-stylelint-tooling...
         }
       : {},
-      
+
     // Design system enforcement rules
     'webster/custom-property-allowed-list': hasTokens
       ? {
@@ -160,9 +160,9 @@ const designSystemConfig = {
           },
         }
       : {},
-    
+
     // Add additional design system rules here...
   },
 };
 
-module.exports = designSystemConfig; 
+module.exports = designSystemConfig;

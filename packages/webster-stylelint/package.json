@@ -3,6 +3,7 @@
   "version": "2.0.0",
   "license": "MIT",
   "description": "Stylelint rules, configurations and tooling for the Webster framework and design system",
+  "type": "module",
   "keywords": [
     "stylelint",
     "webster-stylelint",
@@ -71,4 +72,4 @@
   "jest": {
     "preset": "jest-preset-stylelint"
   }
-} 
+}
