@@ -5,4 +5,7 @@ packages:
   - packages/webster-prettier
   - packages/webster-stylelint
   - packages/webster-typescript
-  
+
+onlyBuiltDependencies:
+  - core-js-pure
+  - postinstall-postinstall
