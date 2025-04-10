@@ -8,12 +8,10 @@ on:
 
 jobs:
   test:
-    name: 'Test (${{ matrix.node-version }})'
+    name: Test
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-      matrix:
-        node-version: ['18.x', '20.x']
     timeout-minutes: 10
 
     steps:
@@ -26,10 +24,10 @@ jobs:
           version: 10.6.5
           run_install: false
 
-      - name: Setup Node.js ${{ matrix.node-version }}
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 20.10.0
           cache: 'pnpm'
 
       - name: Get pnpm store directory
